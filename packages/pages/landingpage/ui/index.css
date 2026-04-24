@@ -1,0 +1,6 @@
+.page__content {
+    gap: 1rem;
+    .logotype {
+        width: 180px;
+    }
+}

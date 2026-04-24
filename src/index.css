@@ -25,6 +25,35 @@
     --60-black: #00000099;
     --80-black: #000000cc;
 
-    --fira-font: 'Fira Sans', sans-serif;
+    --fira-font: 'Fira Sans';
     --sansita-font: 'Sansita One', cursive;
+}
+
+.page {
+    min-height: 100vh;
+    background-color: var(--dark-purple);
+    display: flex;
+    flex-direction: column;
+
+    .page__content {
+        margin: auto auto;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+
+        .page__title {
+            font-family: var(--sansita-font);
+            color: var(--pink);
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        .page__subtitle {
+            font-family: var(--fira-font), cursive;
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
 }
