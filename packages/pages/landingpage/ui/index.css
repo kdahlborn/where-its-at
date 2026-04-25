@@ -1,5 +1,7 @@
-.page__content {
+.brand {
+    margin: auto auto;
     gap: 1rem;
+
     .logotype {
         width: 180px;
     }

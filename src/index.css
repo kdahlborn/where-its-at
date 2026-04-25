@@ -14,8 +14,13 @@
 :root {
     --dark-purple: #231f42;
     --pink: #f56b9a;
-    --white: #fefefe;
+    --white: #ffffff;
     --turqouise: #37aeab;
+    --gray: #d0d0d0;
+    --10-white: #ffffff1a;
+    --20-white: #ffffff33;
+    --30-white: #ffffff4d;
+    --80-white: #ffffffcc;
     --3-black: #00000008;
     --6-black: #0000000f;
     --9-black: #00000017;
@@ -36,16 +41,17 @@
     flex-direction: column;
 
     .page__content {
-        margin: auto auto;
-        padding: 0 1rem;
+        padding: 2.25rem 2rem;
         display: flex;
         flex-direction: column;
+        gap: 2rem;
 
         .page__title {
             font-family: var(--sansita-font);
             color: var(--pink);
             font-size: 2rem;
             font-weight: 400;
+            text-align: center;
         }
 
         .page__subtitle {
@@ -54,6 +60,11 @@
             font-size: 1.25rem;
             font-weight: 400;
             font-style: italic;
+            text-align: center;
         }
     }
+}
+
+ul {
+    list-style: none;
 }
