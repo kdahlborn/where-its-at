@@ -1,0 +1,11 @@
+.btn {
+    background-color: var(--dark-turqouise);
+    color: var(--white);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 1rem 0;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 22px;
+    align-self: stretch;
+}
