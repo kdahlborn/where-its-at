@@ -7,10 +7,10 @@ const variants = {
     exit: { x: '-100%', opacity: 0 },
 };
 
-export const PageWrapper = ({ children }) => {
+export const PageWrapper = ({ children, className = '' }) => {
     return (
         <motion.section
-            className="page__wrapper"
+            className={`page__wrapper ${className}`}
             variants={variants}
             initial="initial"
             animate="animate"

@@ -1,0 +1,22 @@
+.event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    font-family: var(--fira-font);
+
+    .event-info__title {
+        font-size: 35px;
+    }
+
+    .event-info__datetime {
+        color: var(--turqouise);
+        font-size: 19px;
+        font-weight: 700;
+    }
+
+    .event-info__venue {
+        color: var(--70-white);
+        font-style: italic;
+    }
+}

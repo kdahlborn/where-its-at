@@ -4,8 +4,11 @@ import { faList } from '@fortawesome/free-solid-svg-icons/faList';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons/faCartShopping';
 import { faTicket } from '@fortawesome/free-solid-svg-icons/faTicket';
 import { NavLink } from 'react-router-dom';
+import { useCartStore } from '@where-its-at/usecartstore';
 
 export const Navbar = () => {
+    const { cart } = useCartStore();
+
     return (
         <nav className="navbar">
             <NavLink
@@ -23,6 +26,7 @@ export const Navbar = () => {
                     isActive ? 'navbar__link active' : 'navbar__link'
                 }
             >
+                {cart.length > 0 && <span className="qty">{cart.length}</span>}
                 <FontAwesomeIcon
                     icon={faCartShopping}
                     className="navbar__icon"

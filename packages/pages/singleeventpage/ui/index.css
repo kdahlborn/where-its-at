@@ -1,0 +1,25 @@
+.single-page {
+    justify-content: space-between;
+    .page__header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        position: relative;
+
+        .back-btn {
+            background-color: transparent;
+            color: var(--30-white);
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 1.25rem;
+        }
+    }
+
+    .page__subtitle--small {
+        font-size: 18px;
+        align-self: center;
+    }
+}
