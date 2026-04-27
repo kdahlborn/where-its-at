@@ -1,6 +1,8 @@
 .brand {
     margin: auto auto;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
     .logotype {
         width: 180px;

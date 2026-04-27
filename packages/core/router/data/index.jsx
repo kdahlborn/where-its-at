@@ -14,6 +14,7 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <LandingPage />,
+                handle: { hideNavbar: true },
             },
             {
                 path: 'events',

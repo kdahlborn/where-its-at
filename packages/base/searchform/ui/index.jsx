@@ -14,6 +14,7 @@ export const SearchForm = () => {
                 ref={inputRef}
                 type="text"
                 className="form__input"
+                aria-label="Search"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onFocus={() => setIsFocused(true)}

@@ -3,6 +3,7 @@ import './index.css';
 import { useEventsStore } from '@where-its-at/useeventsstore';
 import { EventsList } from '@where-its-at/eventslist';
 import { useEffect } from 'react';
+import { PageWrapper } from '@where-its-at/pagewrapper';
 
 export const EventsPage = () => {
     const { events, loading, error, fetchEvents } = useEventsStore();
@@ -11,15 +12,15 @@ export const EventsPage = () => {
         fetchEvents();
     }, [fetchEvents]);
 
-    useEffect(() => {
-        console.log(events);
-    }, [events]);
+    // useEffect(() => {
+    //     console.log(events);
+    // }, [events]);
 
     return (
-        <section className="page__content">
+        <PageWrapper>
             <h1 className="page__title">Events</h1>
             <SearchForm />
             <EventsList events={events} />
-        </section>
+        </PageWrapper>
     );
 };

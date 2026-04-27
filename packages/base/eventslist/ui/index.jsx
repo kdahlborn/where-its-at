@@ -5,8 +5,8 @@ export const EventsList = ({ events }) => {
     return (
         <ul className="events-list">
             {/* <EventItem event={events[0]} /> */}
-            {events.map((e) => {
-                return <EventItem event={e} />;
+            {events.map((event) => {
+                return <EventItem key={event.id} event={event} />;
             })}
         </ul>
     );
