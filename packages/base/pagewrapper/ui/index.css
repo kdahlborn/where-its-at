@@ -1,0 +1,6 @@
+.page__wrapper {
+    padding: 2.25rem 2rem 7rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

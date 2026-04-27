@@ -1,5 +1,9 @@
-.page__content {
-    gap: 1rem;
+.brand {
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
     .logotype {
         width: 180px;
     }
