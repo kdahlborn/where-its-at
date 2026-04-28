@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { EventInfo } from '@where-its-at/eventinfo';
 import { Counter } from '../../../base/counter/ui';
 import { Button } from '@where-its-at/button';
-import { useCartStore } from '@where-its-at/usecartstore';
+import { useTicketStore } from '@where-its-at/useticketstore';
 import toast, { Toaster } from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -15,8 +15,9 @@ export const SingleEventPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { events, loading, error, fetchEvents } = useEventsStore();
-    const { addToCart } = useCartStore();
+    const { addToCart } = useTicketStore();
     const [qty, setQty] = useState(1);
+
     const notify = () =>
         toast.success(
             `${qty} ${qty > 1 ? 'biljetter' : 'biljett'} till ${event.name} har lagts till i din varukorg`,
@@ -60,7 +61,14 @@ export const SingleEventPage = () => {
                     </h2>
                 </header>
                 <EventInfo event={event} />
-                <Counter event={event} qty={qty} setQty={setQty} />
+                <Counter
+                    event={event}
+                    decrease={() => {
+                        qty > 1 && setQty((prev) => prev - 1);
+                    }}
+                    increase={() => setQty((prev) => prev + 1)}
+                    value={qty}
+                />
                 <Button
                     onClick={() => {
                         addToCart(event, qty);

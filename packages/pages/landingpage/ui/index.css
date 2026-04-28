@@ -7,4 +7,8 @@
     .logotype {
         width: 180px;
     }
+
+    .page__subtitle {
+        transition: all 0.5s ease;
+    }
 }

@@ -15,14 +15,21 @@ export const LandingPage = () => {
 
     return (
         <motion.section
-            className="page__content brand"
+            className="brand"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: 'easeIn' }}
         >
             <img src={logo} alt="logotype" className="logotype" />
             <h1 className="page__title">Where It's @</h1>
-            <h2 className="page__subtitle">Ticketing made easy</h2>
+            <motion.h2
+                className="page__subtitle"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 1.5, ease: 'easeIn' }}
+            >
+                Ticketing made easy
+            </motion.h2>
         </motion.section>
     );
 };

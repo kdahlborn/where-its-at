@@ -16,7 +16,7 @@ export const PageWrapper = ({ children, className = '' }) => {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.3 }}
-            style={{ position: 'absolute', width: '100%' }}
+            style={{ width: '100%' }}
         >
             {children}
         </motion.section>

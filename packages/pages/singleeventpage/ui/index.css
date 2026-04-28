@@ -7,6 +7,10 @@
         gap: 1.25rem;
         position: relative;
 
+        .page__subtitle {
+            max-width: 200px;
+        }
+
         .back-btn {
             background-color: transparent;
             color: var(--30-white);
