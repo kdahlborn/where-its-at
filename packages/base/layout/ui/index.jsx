@@ -14,11 +14,11 @@ export const Layout = () => {
             className="app"
             style={{ position: 'relative', overflowX: 'hidden' }}
         >
-            <AnimatePresence mode="wait">
-                <motion.main className="page" key={location.pathname}>
-                    <Outlet />
-                </motion.main>
-            </AnimatePresence>
+            <main className="page">
+                <AnimatePresence mode="wait">
+                    <Outlet key={location.pathname} />
+                </AnimatePresence>
+            </main>
             {!hideNavbar && <Navbar />}
         </div>
     );

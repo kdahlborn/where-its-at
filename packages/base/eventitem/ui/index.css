@@ -39,8 +39,6 @@
             .event__title {
                 font-size: 22px;
                 font-weight: 600;
-                color: var(--white);
-                text-shadow: 1px 1px 0 var(--pink);
                 grid-column: auto / span 2;
             }
             .event__venue {

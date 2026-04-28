@@ -1,0 +1,23 @@
+.cart-item {
+    .counter {
+        width: 100%;
+        margin: 0;
+
+        .counter__top {
+            padding: 0.5rem 0.75rem;
+
+            .event-info {
+                .event-info__title {
+                    text-align: start;
+                    font-size: 1.5rem;
+                }
+
+                .event-info__datetime {
+                    text-align: start;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

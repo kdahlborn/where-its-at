@@ -8,13 +8,6 @@
     .counter__top {
         padding: 1rem 0;
         border-bottom: 1px solid var(--pink);
-
-        .counter__price {
-            color: var(--white);
-            font-size: 2rem;
-            font-weight: 700;
-            text-shadow: 1px 1px 0 var(--pink);
-        }
     }
 
     .counter__footer {
@@ -33,6 +26,7 @@
             padding: 0.5rem;
             color: var(--white);
             font-size: 1.75rem;
+            font-weight: 400;
             border-inline: 1px solid var(--pink);
         }
     }

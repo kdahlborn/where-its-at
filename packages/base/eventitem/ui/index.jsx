@@ -14,7 +14,7 @@ export const EventItem = ({ event }) => {
                     </p>
                 </section>
                 <article className="event__info">
-                    <h2 className="event__title">{event.name}</h2>
+                    <h2 className="event__title pink-shadow">{event.name}</h2>
                     <p className="event__venue">{event.where}</p>
                     <p className="event__time">
                         {event.when.from} - {event.when.to}

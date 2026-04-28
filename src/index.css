@@ -87,7 +87,13 @@ body {
         font-weight: 400;
         font-style: italic;
         text-align: center;
-        max-width: 200px;
+    }
+
+    .pink-shadow {
+        color: var(--white);
+        font-size: 2rem;
+        font-weight: 700;
+        text-shadow: 1px 1px 0 var(--pink);
     }
 }
 
