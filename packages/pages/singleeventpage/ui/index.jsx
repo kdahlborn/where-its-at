@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { EventInfo } from '@where-its-at/eventinfo';
 import { Counter } from '../../../base/counter/ui';
 import { Button } from '@where-its-at/button';
-import { useTicketStore } from '@where-its-at/useticketstore';
+import { useTicketsStore } from '@where-its-at/useticketsstore';
 import toast, { Toaster } from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ export const SingleEventPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { events, loading, error, fetchEvents } = useEventsStore();
-    const { addToCart } = useTicketStore();
+    const { addToCart } = useTicketsStore();
     const [qty, setQty] = useState(1);
 
     const notify = () =>

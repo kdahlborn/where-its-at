@@ -1,0 +1,15 @@
+.tickets-page {
+    background: linear-gradient(
+        180deg,
+        rgba(245, 107, 154, 1) 0%,
+        rgb(118, 68, 135) 25%,
+        rgba(78, 54, 108, 1) 38%,
+        rgb(58, 41, 84) 50%,
+        rgba(35, 31, 66, 0) 100%
+    );
+}
+
+.barcode {
+    font-family: var(--barcode);
+    font-size: 6rem;
+}

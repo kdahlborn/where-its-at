@@ -4,10 +4,10 @@ import { faList } from '@fortawesome/free-solid-svg-icons/faList';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons/faCartShopping';
 import { faTicket } from '@fortawesome/free-solid-svg-icons/faTicket';
 import { NavLink } from 'react-router-dom';
-import { useTicketStore } from '@where-its-at/useticketstore';
+import { useTicketsStore } from '@where-its-at/useticketsstore';
 
 export const Navbar = () => {
-    const { cart } = useTicketStore();
+    const { cart } = useTicketsStore();
 
     return (
         <nav className="navbar">

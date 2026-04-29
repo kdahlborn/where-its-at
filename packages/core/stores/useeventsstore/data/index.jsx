@@ -13,14 +13,17 @@ export const useEventsStore = create((set) => ({
             .then((res) => {
                 set({
                     events: res.data.events,
-                    loading: false,
                     error: false,
                 });
             })
             .catch(() => {
                 set({
-                    loading: false,
                     error: true,
+                });
+            })
+            .finally(() => {
+                set({
+                    loading: false,
                 });
             });
     },

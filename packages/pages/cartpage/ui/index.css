@@ -1,7 +1,33 @@
+.page__msg {
+    color: var(--white);
+}
+
+.centered {
+    margin: auto 0;
+}
+
 .summary {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 1rem;
     margin-top: auto;
+}
+
+.overlay {
+    height: 100%;
+    display: grid;
+    place-content: center;
+
+    .overlay__text {
+        color: var(--70-white);
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 8rem;
+    }
+}
+
+.overlay__icon {
+    font-size: 5rem;
+    color: var(--turqouise);
 }
