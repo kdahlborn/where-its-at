@@ -2,10 +2,6 @@
     color: var(--white);
 }
 
-.centered {
-    margin: auto 0;
-}
-
 .summary {
     display: flex;
     flex-direction: column;
@@ -14,7 +10,7 @@
     margin-top: auto;
 }
 
-.overlay {
+.overlay__content {
     height: 100%;
     display: grid;
     place-content: center;

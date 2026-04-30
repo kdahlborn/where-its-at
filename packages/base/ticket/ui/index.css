@@ -3,7 +3,6 @@
     border-radius: 0.25rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: auto 0;
 
     .ticket__section {
         grid-column: auto / span 3;
@@ -15,6 +14,7 @@
         .ticket__title {
             text-align: start;
             color: var(--purple);
+            font-size: 1.5rem;
         }
 
         .ticket__section-title {

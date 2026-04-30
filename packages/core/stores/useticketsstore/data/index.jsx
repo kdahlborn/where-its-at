@@ -39,8 +39,11 @@ export const useTicketsStore = create(
             },
 
             checkout: () => {
+                const bookedTickets = get().bookedTickets;
+                const cart = get().cart;
+
                 set({
-                    bookedTickets: createTickets(get().cart),
+                    bookedTickets: [...bookedTickets, ...createTickets(cart)],
                     cart: [],
                 });
             },

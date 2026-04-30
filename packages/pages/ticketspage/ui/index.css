@@ -8,8 +8,3 @@
         rgba(35, 31, 66, 0) 100%
     );
 }
-
-.barcode {
-    font-family: var(--barcode);
-    font-size: 6rem;
-}
