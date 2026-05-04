@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { createTickets } from '@where-its-at/createtickets';
 
-export const useTicketStore = create(
+export const useTicketsStore = create(
     persist(
         (set, get) => ({
             cart: [],
@@ -15,7 +15,7 @@ export const useTicketStore = create(
                 if (eventInCart) {
                     set({
                         cart: cart.map((e) =>
-                            e.id === event.id ? { ...e, qty: e.qty + 1 } : e,
+                            e.id === event.id ? { ...e, qty: e.qty + qty } : e,
                         ),
                     });
                 } else {
@@ -39,8 +39,11 @@ export const useTicketStore = create(
             },
 
             checkout: () => {
+                const bookedTickets = get().bookedTickets;
+                const cart = get().cart;
+
                 set({
-                    bookedTickets: createTickets(get().cart),
+                    bookedTickets: [...bookedTickets, ...createTickets(cart)],
                     cart: [],
                 });
             },

@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const createTickets = (cart) => {
     const sections = ['A', 'B', 'C', 'D', 'E'];
     let tickets = [];
@@ -12,6 +14,7 @@ export const createTickets = (cart) => {
                 ...ticket,
                 section: section,
                 seat: seat + i,
+                id: uuidv4().slice(0, 5).toUpperCase(),
             };
             tickets.push(ticket);
         }

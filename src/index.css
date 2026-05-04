@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Barcode+39&display=swap');
 
 @font-face {
     font-family: 'Sansita One';
@@ -40,7 +40,6 @@ html {
     --pink: #f56b9a;
     --dark-pink: #a8375d;
     --white: #ffffff;
-    --light-turqouise: #84e0dd;
     --turqouise: #37aeab;
     --dark-turqouise: #2f827f;
     --gray: #d0d0d0;
@@ -60,6 +59,7 @@ html {
 
     --fira-font: 'Fira Sans';
     --sansita-font: 'Sansita One', cursive;
+    --barcode: 'Libre Barcode 39', system-ui;
 }
 
 body {
@@ -71,30 +71,34 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: var(--dark-purple);
+}
 
-    .page__title {
-        font-family: var(--sansita-font);
-        color: var(--pink);
-        font-size: 2rem;
-        font-weight: 400;
-        text-align: center;
-    }
+.page__title {
+    font-family: var(--sansita-font);
+    color: var(--pink);
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
 
-    .page__subtitle {
-        font-family: var(--fira-font), cursive;
-        color: var(--white);
-        font-size: 1.25rem;
-        font-weight: 400;
-        font-style: italic;
-        text-align: center;
-    }
+.page__msg {
+    text-align: center;
+}
 
-    .pink-shadow {
-        color: var(--white);
-        font-size: 2rem;
-        font-weight: 700;
-        text-shadow: 1px 1px 0 var(--pink);
-    }
+.page__subtitle {
+    font-family: var(--fira-font), cursive;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+
+.pink-shadow {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 var(--pink);
 }
 
 ul {
@@ -103,4 +107,21 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+.page__link {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.centered-y {
+    margin: auto 0;
+}
+
+.centered-x {
+    margin: 0 auto;
+}
+
+.centered {
+    margin: auto auto;
 }
