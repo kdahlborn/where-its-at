@@ -10,7 +10,9 @@ export const CartItem = ({ item }) => {
             <Counter
                 event={item}
                 decrease={() => removeFromCart(item.id)}
-                increase={() => addToCart(item)}
+                increase={() => {
+                    item.qty < 10 && addToCart(item);
+                }}
                 value={item.qty}
                 inCart={true}
             />

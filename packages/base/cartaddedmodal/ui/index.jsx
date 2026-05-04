@@ -1,10 +1,8 @@
 import './index.css';
-import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core';
 import { EventInfo } from '@where-its-at/eventinfo';
 import { Button } from '@where-its-at/button';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 export const CartAddedModal = ({ opened, close, event, qty }) => {
     const navigate = useNavigate();
@@ -14,7 +12,7 @@ export const CartAddedModal = ({ opened, close, event, qty }) => {
             opened={opened}
             onClose={close}
             withCloseButton={false}
-            size="75%"
+            size="280px"
             centered
             classNames={{
                 content: 'modal',

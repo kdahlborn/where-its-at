@@ -1,17 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-export const SearchForm = () => {
-    const inputRef = useRef(null);
-    const [input, setInput] = useState('');
+export const SearchForm = ({ input, setInput }) => {
     const [isFocused, setIsFocused] = useState(false);
 
     return (
-        <form className="form">
+        <form className="form" onSubmit={(e) => e.preventDefault()}>
             <input
-                ref={inputRef}
                 type="text"
                 className="form__input"
                 aria-label="Search"

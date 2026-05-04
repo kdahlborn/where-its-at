@@ -1,6 +1,6 @@
 import './index.css';
 
-export const Button = ({ text, className = '', onClick, label = null }) => {
+export const Button = ({ text, className = '', onClick, label }) => {
     return (
         <button
             className={`btn ${className}`}

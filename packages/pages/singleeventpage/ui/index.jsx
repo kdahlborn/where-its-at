@@ -7,12 +7,13 @@ import { EventInfo } from '@where-its-at/eventinfo';
 import { Counter } from '../../../base/counter/ui';
 import { Button } from '@where-its-at/button';
 import { useTicketsStore } from '@where-its-at/useticketsstore';
-import toast, { Toaster } from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDisclosure } from '@mantine/hooks';
 import { CartAddedModal } from '@where-its-at/cartaddedmodal';
 import { Modal } from '@mantine/core';
+import { LoadingDots } from '@where-its-at/loadingdots';
+import { DisplayError } from '@where-its-at/displayerror';
 
 export const SingleEventPage = () => {
     const { id } = useParams();
@@ -22,17 +23,6 @@ export const SingleEventPage = () => {
     const [qty, setQty] = useState(1);
     const [opened, { open, close }] = useDisclosure(false);
 
-    const notify = () =>
-        toast.success(
-            `${qty} ${qty > 1 ? 'biljetter' : 'biljett'} till ${event.name} har lagts till i din varukorg`,
-            {
-                style: {
-                    backgroundColor: 'var(--purple)',
-                    color: 'var(--white)',
-                },
-            },
-        );
-
     useEffect(() => {
         if (events.length === 0) {
             fetchEvents();
@@ -41,56 +31,54 @@ export const SingleEventPage = () => {
 
     const event = events.find((e) => e.id === id);
 
-    // const handleClick = () => {};
-
-    if (loading) {
-        return <div className="">Loading...</div>;
-    }
-
-    if (error) {
-        return <div className="">error...</div>;
-    }
-
-    if (event) {
-        return (
-            <PageWrapper className="single-page">
-                <header className="page__header">
-                    <Button
-                        onClick={() => navigate(-1)}
-                        className="back-btn"
-                        text={<FontAwesomeIcon icon={faArrowLeft} />}
-                        label="Go back"
-                    />
-                    <h1 className="page__title">Event</h1>
+    return (
+        <PageWrapper className="single-page">
+            <header className="page__header">
+                <Button
+                    onClick={() => navigate(-1)}
+                    className="back-btn"
+                    text={<FontAwesomeIcon icon={faArrowLeft} />}
+                    label="Go back"
+                />
+                <h1 className="page__title">Event</h1>
+                {event && (
                     <h2 className="page__subtitle page__subtitle--small">
                         You are about to score some tickets to
                     </h2>
-                </header>
-                <EventInfo event={event} />
-                <Counter
-                    event={event}
-                    decrease={() => {
-                        qty > 1 && setQty((prev) => prev - 1);
-                    }}
-                    increase={() => setQty((prev) => prev + 1)}
-                    value={qty}
-                />
-                <Button
-                    onClick={() => {
-                        addToCart(event, qty);
-                        // notify();
-                        open();
-                    }}
-                    text={'Lägg till i varukorgen'}
-                />
-                <Toaster toastOptions={{ duration: 3000 }} />
-                <CartAddedModal
-                    opened={opened}
-                    close={close}
-                    event={event}
-                    qty={qty}
-                />
-            </PageWrapper>
-        );
-    }
+                )}
+            </header>
+            {loading ? (
+                <LoadingDots color="purple" className="centered-y" />
+            ) : error || !event ? (
+                <DisplayError error={error} onRetry={fetchEvents} />
+            ) : (
+                <>
+                    <EventInfo event={event} />
+                    <Counter
+                        event={event}
+                        decrease={() => {
+                            qty > 1 && setQty((prev) => prev - 1);
+                        }}
+                        increase={() => {
+                            qty < 10 && setQty((prev) => prev + 1);
+                        }}
+                        value={qty}
+                    />
+                    <Button
+                        onClick={() => {
+                            addToCart(event, qty);
+                            open();
+                        }}
+                        text={'Lägg till i varukorgen'}
+                    />
+                    <CartAddedModal
+                        opened={opened}
+                        close={close}
+                        event={event}
+                        qty={qty}
+                    />
+                </>
+            )}
+        </PageWrapper>
+    );
 };

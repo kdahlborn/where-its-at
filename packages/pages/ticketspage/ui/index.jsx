@@ -1,7 +1,6 @@
 import './index.css';
 import { PageWrapper } from '@where-its-at/pagewrapper';
 import { useTicketsStore } from '@where-its-at/useticketsstore';
-import { Ticket } from '@where-its-at/ticket';
 import { TicketSwiper } from '@where-its-at/ticketswiper';
 import { Button } from '@where-its-at/button';
 import { Link } from 'react-router-dom';
