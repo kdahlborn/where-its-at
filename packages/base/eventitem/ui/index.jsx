@@ -9,7 +9,7 @@ export const EventItem = ({ event }) => {
                     <p className="date__day">
                         {event.when.date.slice(0, 2)}
                         <span className="date__month">
-                            {event.when.date.slice(3)}
+                            {event.when.date.slice(2, 6).toUpperCase()}
                         </span>
                     </p>
                 </section>
