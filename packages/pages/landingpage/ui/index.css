@@ -1,0 +1,14 @@
+.brand {
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .logotype {
+        width: 180px;
+    }
+
+    .page__subtitle {
+        transition: all 0.5s ease;
+    }
+}

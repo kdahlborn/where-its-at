@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Barcode+39&display=swap');
+
+@font-face {
+    font-family: 'Sansita One';
+    src: url(./assets/fonts/SansitaOne.ttf) format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+:root {
+    --purple: #494285;
+    --dark-purple: #231f42;
+    --light-pink: #ed97b3;
+    --pink: #f56b9a;
+    --dark-pink: #a8375d;
+    --white: #ffffff;
+    --turqouise: #37aeab;
+    --dark-turqouise: #2f827f;
+    --gray: #d0d0d0;
+    --10-white: #ffffff1a;
+    --20-white: #ffffff33;
+    --30-white: #ffffff4d;
+    --70-white: #ffffffb2;
+    --80-white: #ffffffcc;
+    --3-black: #00000008;
+    --6-black: #0000000f;
+    --9-black: #00000017;
+    --12-black: #0000001f;
+    --34-black: #00000057;
+    --40-black: #00000066;
+    --60-black: #00000099;
+    --80-black: #000000cc;
+
+    --fira-font: 'Fira Sans';
+    --sansita-font: 'Sansita One', cursive;
+    --barcode: 'Libre Barcode 39', system-ui;
+}
+
+body {
+    font-family: var(--fira-font);
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--dark-purple);
+}
+
+.page__title {
+    font-family: var(--sansita-font);
+    color: var(--pink);
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.page__msg {
+    text-align: center;
+}
+
+.page__subtitle {
+    font-family: var(--fira-font), cursive;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+
+.pink-shadow {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 var(--pink);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page__link {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.centered-y {
+    margin: auto 0;
+}
+
+.centered-x {
+    margin: 0 auto;
+}
+
+.centered {
+    margin: auto auto;
+}

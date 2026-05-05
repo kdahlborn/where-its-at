@@ -1,0 +1,9 @@
+.page__wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2.25rem 2rem 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
