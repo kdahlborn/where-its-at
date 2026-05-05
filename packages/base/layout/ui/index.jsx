@@ -1,11 +1,9 @@
-import { Outlet, useLocation, useMatches } from 'react-router-dom';
-import { AnimatePresence } from 'motion/react';
+import { Outlet, useMatches } from 'react-router-dom';
 import './index.css';
 import { Navbar } from '@where-its-at/navbar';
 import { Toaster } from 'react-hot-toast';
 
 export const Layout = () => {
-    const location = useLocation();
     const matches = useMatches();
     const hideNavbar = matches.some((match) => match.handle?.hideNavbar);
 
@@ -16,9 +14,7 @@ export const Layout = () => {
         >
             <Toaster position="top-center" />
             <main className="page">
-                <AnimatePresence mode="wait">
-                    <Outlet key={location.pathname} />
-                </AnimatePresence>
+                <Outlet />
             </main>
             {!hideNavbar && <Navbar />}
         </div>
